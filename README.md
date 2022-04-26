@@ -32,7 +32,7 @@ SPI interface over an HDMI cable.
 
 ### Files Created
 
-* **src/DDScope.ino (modified version of original OnStep.ino)**   
+* **src/DDScope.ino (modified version of original OnStep.ino)**  
   * TouchScreen.ino  
   * HomePage.ino
     * GuidePage.ino
@@ -57,15 +57,15 @@ SPI interface over an HDMI cable.
 ### Key Libraries and packages
 
 * Onstep Firmware  
-    Author: Howard Dutton, http://www.stellarjourney.com
+    Author: [Howard Dutton](http://www.stellarjourney.com)
 * Multiple celestial catalogs using catalog portion of Smart Hand Controller(SHC)  
-    Author: Charles Lemaire, https://pixelstelescopes.wordpress.com/teenastro/  
-    Author: Howard Dutton, http://www.stellarjourney.com
+    Author: [Charles Lemair](https://pixelstelescopes.wordpress.com/teenastro)  
+    Author: [Howard Dutton](http://www.stellarjourney.com)
 * Planet catalog using Ephermeris Software  
-    Author: Sebastien MARCHAND (www.marscaper.com)
+    Author: [Sebastien MARCHAND](www.marscaper.com)
 * A catalog of sky "Treasures" from rDUINOScope on micro SD card  
     Author: Dessislav Gouzgounov (Desso)  
-    PROJECT Website: (http://rduinoscope.byethost24.com)  
+    PROJECT [Website](http://rduinoscope.byethost24.com)  
     Original file has been formatted differently for DDScope
 * _Adafruit_ILI9486_Teensy_ by Steve Strong & Richard Palmer
 * include/DDFonts/   _(various supporting fonts)_
@@ -188,12 +188,13 @@ See [LICENSE.txt](./LICENSE.txt) file.
 ## Images
 
 ### Menu Screens
+
 ![Menu Screens](menuScreens.jpg)
 
 ### Catalog Screens
 
 ![Catalog Screens](catalogScreens.jpg)
 
-### DDScope
+### DDScope Picture
 
 ![DDScope Picture](DDScope.jpg)
