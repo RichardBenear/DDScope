@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "DDScope",
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"githubPullRequests.remotes": []
+	}
+}

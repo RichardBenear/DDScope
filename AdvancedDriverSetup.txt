@@ -1,0 +1,42 @@
+// Advanced stepper driver mode setup  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+// Use selections from this in your Config.h file's MOTION CONTROL section as detailed below
+//
+// M0, M1, M2, and M3 for Axis1/2 (RA/Azm) and are listed in Config.h's PINMAP matching Pins.xxx.h file.
+// values (0b000 to 111): for example "#define ..STEP_CODE 4" is the same as "#define ..STEP_CODE 0b100" which sets M2 to HIGH, M1 to LOW, and M0 to LOW
+//                                                                                                 / | \                  (1)         (0)            (0)
+//                                                                                               M2  M1 M0
+//
+
+// Substitute the Axis# (1 to 5) for "n" in the examples below.
+
+// * = Option is automatically set when AXISn_DRIVER_MODEL is specified, if using these don't specify _MODEL, _MICROSTEPS, or _MICROSTEPS_GOTO.
+// ** = Option applies for Axis1 and Axis2 only.
+
+#define AXISn_DRIVER_CODE_OFF             //   _OFF, n, Programs mode M0/M1/M2 as above. In SPI mode reg. value directly set. Option,*
+#define AXISn_DRIVER_CODE_GOTO_OFF        //   _OFF, n, Programs mode as above, used during gotos.                            Option,*,**
+                                          //         For Axis1 and Axis2 only.
+#define AXISn_DRIVER_STEP_GOTO          1 //      1, n, (tracking mode steps/goto mode step.) Example: 32x to 8x goto = 4.    Adjust,*,**
+
+// Settings for TMC2130, TMC5160, etc? stepper drivers when in SPI mode.
+#define AXISn_DRIVER_INTPOL          true //   true, false to disable 256x interpolation.                                     Option
+#define AXISn_DRIVER_IHOLD            OFF //    OFF, n, (mA.) Current during standstill. OFF uses IRUN/2.0                    Option
+#define AXISn_DRIVER_IRUN             OFF //    OFF, n, (mA.) Current during tracking, appropriate for stepper/driver/etc.    Option
+#define AXISn_DRIVER_IGOTO            OFF //    OFF, n, (mA.) Current during slews. OFF uses same as IRUN.                    Option,**
+#define AXISn_DRIVER_PWM_GRAD         OFF //    OFF, n, (0 to 255.) See TMC2130 datasheet sect 6.3 or TMC5160/61 sect 7.4     Option,**
+#define AXISn_DRIVER_FS_VHIGH         OFF //    OFF, n, (tracking mode steps/s.) Velocity switchover full step & slow decay.  Option,**
+#define AXISn_DRIVER_SC_VHIGH         OFF //    OFF, n, (tracking mode steps/s.) Velocity switchover to spreadCycle mode.     Option,**
+#define AXISn_DRIVER_RSENSE          0.13 //   0.13, n, Rsense for TMC2130, Rsense for SSS TMC5160 is 0.075, can vary.        Adjust,*
+
+#define MODE_SWITCH_BEFORE_SLEW       OFF //    OFF, Applies mode settings during slew at 128uS/step speeds.                  Option,*
+                                          //         ON Applies mode settings before/after the slew.
+#define MODE_SWITCH_SLEEP             OFF //    OFF, ON. Mode switch before/after slew insert 3ms delay before drivers step.  Option,*
+
+#define AXISn_DRIVER_DECAY_MODE       OFF //    OFF, HIGH, LOW, OPEN, SPREADCYCLE, STEALTHCHOP.                               Option,*
+#define AXISn_DRIVER_DECAY_MODE_GOTO  OFF //    OFF, HIGH, LOW, OPEN, SPREADCYCLE, STEALTHCHOP.                               Option,*,**
+                                          //         Decay mode control, applied before/after the slew.  DRV8825, TMC2209, 
+                                          //         TMC2130, TMC5160, etc.  DRV8825 modules need modification to enable this.
+                                          //         Axis1/2 decay mode pin locations, if available, are in Pins.xxx.h
+
+#define AXISn_DRIVER_ENABLE           LOW //    LOW, HIGH state required on EN line to enable the S/D driver.                 Adjust
+
+// . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 

@@ -1,0 +1,5 @@
+{
+    "cmake.configureOnOpen": false,
+    "C_Cpp.dimInactiveRegions": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
